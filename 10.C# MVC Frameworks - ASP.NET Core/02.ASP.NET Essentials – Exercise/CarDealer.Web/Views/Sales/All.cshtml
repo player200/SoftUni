@@ -1,0 +1,32 @@
+﻿@model  IEnumerable<SalesModel>
+@{
+    ViewData["Title"] = "All Sales";
+}
+
+<h2>All Sales</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Model</th>
+            <th>TravelledDistance</th>
+            <th>Custromer</th>
+            <th>Price</th>
+            <th>Discount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sale in Model)
+        {
+            <tr>
+                <td>@sale.CarMake</td>
+                <td>@sale.CarModel</td>
+                <td>@sale.CarTravelledDistance</td>
+                <td>@sale.CustromerName</td>
+                <td>@sale.Price $</td>
+                <td>%@sale.Discount</td>
+            </tr>
+        }
+    </tbody>
+</table>

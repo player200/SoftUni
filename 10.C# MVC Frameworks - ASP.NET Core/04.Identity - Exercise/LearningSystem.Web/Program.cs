@@ -1,0 +1,20 @@
+﻿namespace LearningSystem.Web
+{
+    using Microsoft.AspNetCore;
+    using Microsoft.AspNetCore.Hosting;
+
+    //If the application dont start, start your MSSQL and config your db path 
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            BuildWebHost(args).Run();
+        }
+
+        public static IWebHost BuildWebHost(string[] args)
+            => WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
+    }
+}

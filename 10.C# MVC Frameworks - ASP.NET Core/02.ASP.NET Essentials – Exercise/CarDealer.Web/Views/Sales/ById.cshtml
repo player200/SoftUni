@@ -1,0 +1,23 @@
+﻿@model CarsMakeModel
+@{
+    ViewData["Title"] = "Sale";
+}
+
+<h2>Sale</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Travelled Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Make</td>
+            <td>@Model.Model</td>
+            <td>@Model.TravelledDistance</td>
+        </tr>
+    </tbody>
+</table>

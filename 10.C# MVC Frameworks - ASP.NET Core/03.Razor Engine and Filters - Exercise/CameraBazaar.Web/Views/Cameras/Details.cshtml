@@ -1,0 +1,29 @@
+﻿@model CameraModel
+@{
+    ViewData["Title"] = $"Details {Model.Make}";
+}
+<div class="row">
+    <div class="col-md-8">
+        <h2>@Model.Make @Model.Model - $@Model.Price - @(Model.Quantity > 0 ? "IN STOCK" : "OUT OF STOCK")</h2>
+        <h4><a href="/users/profile/@Model.UserName">@Model.UserName</a></h4>
+        <br />
+        <img src="@Model.ImageUrl" height="250" width="250" />
+        <br />
+        <p><strong>Is Full Frame:</strong> @(Model.IsFullFrame ? "Yes" : "No")</p>
+        <p><strong>Min Shutter Speed:</strong> @Model.MinShutterSpeed</p>
+        <p><strong>Max Shutter Speed:</strong> @Model.MaxShutterSpeed</p>
+        <p><strong>Min ISO:</strong> @Model.MinISO</p>
+        <p><strong>Max ISO:</strong> @Model.MaxISO</p>
+        <p><strong>Video Resolution:</strong> @Model.VideoResolution</p>
+        <p>
+            <strong>Light Metering:</strong>
+        </p>
+        <ul>
+            @foreach (var item in @Model.LightMetering.ToString().Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray())
+            {
+                <li>@item</li>
+            }
+        </ul>
+        <p><strong>Description:</strong> @Model.Description</p>
+    </div>
+</div>

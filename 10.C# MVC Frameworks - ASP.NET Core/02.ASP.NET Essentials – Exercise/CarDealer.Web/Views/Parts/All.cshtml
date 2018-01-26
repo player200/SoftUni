@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PartsAllModel>
+@{
+    ViewData["Title"] = "All parts";
+}
+
+<h2>
+    @ViewData["Title"]
+    <a class="btn btn-warning btn-sm" href="/parts/create">Create</a>
+</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Supplier</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in Model)
+        {
+            <tr>
+                <td>@part.Name</td>
+                <td>@part.Price $</td>
+                <td>@part.Quantity</td>
+                <td>@part.SupplierName</td>
+                <td><a class="btn btn-warning btn-sm" href="/parts/edit/@part.Id">Edit</a></td>
+                <td><a class="btn btn-danger btn-sm" href="/parts/delete/@part.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

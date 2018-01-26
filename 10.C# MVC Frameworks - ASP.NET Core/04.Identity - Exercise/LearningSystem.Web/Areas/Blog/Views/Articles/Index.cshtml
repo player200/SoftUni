@@ -1,0 +1,29 @@
+﻿@model SearchArticlesViewModel
+@{
+    ViewData["Title"] = "Articles";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <form>
+        <div class="col-md-6">
+            <input asp-for="SearchText" class="form-control" placeholder="Search..." />
+        </div>
+        <div class="col-md-2">
+            <input type="submit" class="btn btn-default" value="Search" />
+        </div>
+    </form>
+</div>
+<br />
+<br />
+
+<div class="row">
+@foreach (var article in Model.Articles)
+{
+    <div class="col-md-10">
+        <h2>@article.Title</h2>
+        <p>@article.Content</p>
+        <p>By @article.Author - @article.PublishDate.ToShortDateString()</p>
+    </div>
+}
+</div>

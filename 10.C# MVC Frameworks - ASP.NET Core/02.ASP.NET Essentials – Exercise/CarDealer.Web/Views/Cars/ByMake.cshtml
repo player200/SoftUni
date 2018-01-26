@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CarsMakeModel>
+
+@{
+    ViewData["Title"] = "ByMake";
+}
+
+<h2>Cars - @Model.FirstOrDefault().Make</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Make</td>
+            <td>Model</td>
+            <td>TravelledDistance</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>@car.TravelledDistance</td>
+            </tr>
+        }
+    </tbody>
+</table>

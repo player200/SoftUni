@@ -1,0 +1,45 @@
+﻿@model SearchViewModel
+@{
+    ViewData["Title"] = $"Search results for {Model.SearchText}";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model.Courses.Any())
+{
+    <h3>Courses</h3>
+    <div class="row home-page">
+        @foreach (var course in Model.Courses)
+        {
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id">@course.Name</a>
+                    </div>
+                    <div class="panel-body">
+                        @course.StartDate.ToShortDateString() - @course.EndDate.ToShortDateString()
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h3>No courses to show.</h3>
+}
+
+@if (Model.Users.Any())
+{
+    <h3>Users</h3>
+    <ul>
+        @foreach (var users in Model.Users)
+        {
+            <li><a asp-controller="Users" asp-action="Profile" asp-route-username="@users.Username">@users.Name - @users.Courses</a></li>
+        }
+    </ul>
+}
+else
+{
+    <h3>No users to show.</h3>
+}

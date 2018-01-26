@@ -1,0 +1,78 @@
+﻿@model RandomCamModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Make"></label>
+                <select asp-for="Make" asp-items="Html.GetEnumSelectList<CameraMake>()"readonly class="form-control"></select>
+                <span asp-validation-for="Make" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CameraModel"></label>
+                <input asp-for="CameraModel"readonly class="form-control" />
+                <span asp-validation-for="CameraModel" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price"readonly class="form-control" />
+                <span asp-validation-for="Price" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input asp-for="Quantity"readonly class="form-control" />
+                <span asp-validation-for="Quantity" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinShutterSpeed"></label>
+                <input asp-for="MinShutterSpeed" min="1"readonly max="30" class="form-control" />
+                <span asp-validation-for="MinShutterSpeed" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxShutterSpeed"></label>
+                <input asp-for="MaxShutterSpeed" min="2000"readonly max="8000" step="1000" class="form-control" />
+                <span asp-validation-for="MaxShutterSpeed" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinISO"></label>
+                <select asp-for="MinISO" asp-items="Html.GetEnumSelectList<MinISO>()" readonly class="form-control"></select>
+                <span asp-validation-for="MinISO" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxISO"></label>
+                <input asp-for="MaxISO" min="200"readonly max="409600" step="100" class="form-control" />
+                <span asp-validation-for="MaxISO" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsFullFrame"></label>
+                @Html.RadioButtonFor(m => m.IsFullFrame, true) Yes
+                @Html.RadioButtonFor(m => m.IsFullFrame, false) No
+                <span asp-validation-for="IsFullFrame"readonly class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoResolution"></label>
+                <input asp-for="VideoResolution"readonly class="form-control" />
+                <span asp-validation-for="VideoResolution" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description"readonly class="form-control"></textarea>
+                <span asp-validation-for="Description" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl"readonly class="form-control" />
+                <span asp-validation-for="ImageUrl" class="form-text text-danger"></span>
+            </div>
+            <div>
+                <input class="btn btn-danger" type="submit" name="Delete Camera" />
+                <a class="btn btn-default" name="Back to cameras" href="/cameras/all">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

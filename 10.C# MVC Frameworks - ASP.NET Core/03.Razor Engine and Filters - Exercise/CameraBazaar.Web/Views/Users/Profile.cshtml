@@ -1,0 +1,64 @@
+﻿@model UsersModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h2>@Model.UserName @{
+    if (User.Identity.Name==Model.UserName)
+    {
+        <a class="btn btn-primary" href="/users/edit/@Model.UserName" name="Edit Profile">Edit Profile</a>
+    }}
+    Last time login:@Model.LastTimeLoged
+    </h2>
+
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Phone:</strong> @Model.Phone</p>
+<p><strong>Cameras:</strong> @Model.CamerasInStock in stock/@Model.CamerasNotInStock out of stock</p>
+<br />
+<h3>Cameras:</h3>
+@{
+    if (Model.Cameras.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Image</td>
+                    <td>Make</td>
+                    <td>Model</td>
+                    <td>Price</td>
+                    <td>In Stock</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var camera in Model.Cameras)
+                {
+                    <tr>
+                        <td><img src="@camera.ImageUrl" height="100" width="100" /></td>
+                        <td>@camera.Make</td>
+                        <td>@camera.Model</td>
+                        <td>$@camera.Price</td>
+                        <td>@(camera.Quantity > 0 ? "IN STOCK" : "OUT OF STOCK")</td>
+                        <td>
+                            @{
+                                if (User.Identity.Name == Model.UserName)
+                                {
+                                    <a class="btn btn-primary" href="/cameras/edit/@camera.Id">Edit</a>
+                                    <a class="btn btn-danger" href="/cameras/delete/@camera.Id">Delete</a>
+                                    <a class="btn btn-default" href="/cameras/details/@camera.Id">Details</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-default" href="/cameras/details/@camera.Id">Details</a>
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>The user is not selling any cameras. Go to <a asp-area="" asp-controller="Home" asp-action="Index">home page</a> to find other offers of other users.</p>
+    }
+}

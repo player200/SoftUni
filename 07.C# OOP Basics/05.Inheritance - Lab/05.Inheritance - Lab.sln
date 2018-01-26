@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-03.Inheritance", "01-03.Inheritance\01-03.Inheritance.csproj", "{13760E05-CC37-47B1-A6CE-0508C41C90AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Random List", "04. Random List\04. Random List.csproj", "{DA451175-E3BC-4379-84AC-5DB9E29B7209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Stack of Strings", "05. Stack of Strings\05. Stack of Strings.csproj", "{17262422-1686-46CB-842C-3B7D4A4A51D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13760E05-CC37-47B1-A6CE-0508C41C90AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13760E05-CC37-47B1-A6CE-0508C41C90AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13760E05-CC37-47B1-A6CE-0508C41C90AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13760E05-CC37-47B1-A6CE-0508C41C90AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA451175-E3BC-4379-84AC-5DB9E29B7209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA451175-E3BC-4379-84AC-5DB9E29B7209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA451175-E3BC-4379-84AC-5DB9E29B7209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA451175-E3BC-4379-84AC-5DB9E29B7209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17262422-1686-46CB-842C-3B7D4A4A51D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17262422-1686-46CB-842C-3B7D4A4A51D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17262422-1686-46CB-842C-3B7D4A4A51D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17262422-1686-46CB-842C-3B7D4A4A51D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

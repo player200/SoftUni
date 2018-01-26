@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Harvesting Fields", "01. Harvesting Fields\01. Harvesting Fields.csproj", "{091ABA38-4A56-44C1-A78D-75EF0622835E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Black Box Integer", "02. Black Box Integer\02. Black Box Integer.csproj", "{34D6975B-F8AF-4159-8DD8-91823AB1DEDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. BarrackWars - A New Factory", "03. BarrackWars - A New Factory\03. BarrackWars - A New Factory.csproj", "{958FF596-ACC7-4BC7-B854-1A0DCAA7552F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{091ABA38-4A56-44C1-A78D-75EF0622835E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091ABA38-4A56-44C1-A78D-75EF0622835E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091ABA38-4A56-44C1-A78D-75EF0622835E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091ABA38-4A56-44C1-A78D-75EF0622835E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D6975B-F8AF-4159-8DD8-91823AB1DEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D6975B-F8AF-4159-8DD8-91823AB1DEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D6975B-F8AF-4159-8DD8-91823AB1DEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D6975B-F8AF-4159-8DD8-91823AB1DEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{958FF596-ACC7-4BC7-B854-1A0DCAA7552F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{958FF596-ACC7-4BC7-B854-1A0DCAA7552F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{958FF596-ACC7-4BC7-B854-1A0DCAA7552F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{958FF596-ACC7-4BC7-B854-1A0DCAA7552F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

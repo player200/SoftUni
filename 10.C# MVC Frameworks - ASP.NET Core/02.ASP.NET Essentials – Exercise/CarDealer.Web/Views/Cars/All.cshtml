@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CarsMakeModel>
+@{
+    ViewData["Title"] = "All cars";
+}
+<h2>
+    @ViewData["Title"]
+    <a class="btn btn-warning btn-sm" href="/cars/create">Create</a>
+</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Make</td>
+            <td>Model</td>
+            <td>TravelledDistance</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>@car.TravelledDistance</td>
+            </tr>
+        }
+    </tbody>
+</table>

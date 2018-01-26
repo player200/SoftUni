@@ -1,0 +1,29 @@
+﻿@model CreatePartsModel
+@{
+    ViewData["Title"] = $"Delete {Model.Name}";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input readonly asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input readonly asp-for="Price" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input readonly asp-for="Quantity" class="form-control" />
+            </div>
+            <div>
+                <input class="btn btn-danger" type="submit" name="Delete Part" />
+                <a class="btn btn-default" name="Back to parts" href="/parts/all">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
