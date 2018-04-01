@@ -1,5 +1,5 @@
 function attachEvents() {
-    //set your appKey of kenvey data, create user
+    //set your appKey of kinvey data, create user
     let appKey = ''
     let user = ''
     let password = ''
