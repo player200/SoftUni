@@ -1,0 +1,61 @@
+{{> header}}
+<div class="content">
+    {{> navigation}}
+    <section id="viewComments">
+        <div class="post">
+            <div class="col thumbnail">
+                <a href="{{post.url}}">
+                    <img src="{{post.imageUrl}}">
+                </a>
+            </div>
+            <div class="post-content">
+                <div class="title">
+                    <a href="{{post.url}}">
+                        {{post.title}}
+                    </a>
+                </div>
+                <div class="details">
+                    {{#if post.description}}
+                        <p>{{post.description}}</p>
+                    {{else}}
+                        <p>No description</p>
+                    {{/if}}
+                    <div class="info">
+                        submitted {{post.data}} days ago by {{username}}
+                    </div>
+                    {{#if post.isAuthor}}
+                        <div class="controls">
+                            <ul>
+                                <li class="action"><a class="editLink" href="#/edit/post/{{post._id}}">edit</a></li>
+                                <li class="action"><a class="deleteLink" href="#/delete/post/{{post._id}}">delete</a>
+                                </li>
+                            </ul>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="post post-content">
+            <form action="#/create/comment/{{post._id}}" method="post" id="commentForm">
+                <label>Comment</label>
+                <textarea name="content" type="text"></textarea>
+                <input type="submit" value="Add Comment" id="btnPostComment">
+            </form>
+        </div>
+        {{#each comments}}
+            <article class="post post-content">
+                <p>{{content}}</p>
+                <div class="info">
+                    submitted {{commentData}} days ago by {{author}} |
+                    {{#if commentAuthor}}
+                        <a href="#/delete/comment/{{_id}}/post/{{postId}}" class="deleteLink">delete</a>
+                    {{/if}}
+                </div>
+            </article>
+        {{else}}
+            <p>No comments yet.</p>
+        {{/each}}
+    </section>
+</div>
+{{> footer}}
