@@ -1,0 +1,22 @@
+{{>header}}
+{{>navigation}}
+
+<section id="viewDiscover">
+    <div class="content">
+        <div class="chirps">
+            <h2 class="titlebar">Discover</h2>
+            <div id="userlist">
+                {{#each users}}
+                    <div class="userbox">
+                        <div><a href="#/user/details/{{username}}" class="chirp-author">{{username}}</a></div>
+                        <div class="user-details">
+                            <span>{{followers}} followers</span>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>footer}}

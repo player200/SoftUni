@@ -1,0 +1,37 @@
+{{>header}}
+{{>navigation}}
+<section id="viewProfile">
+    <div class="content">
+        <div class="chirper">
+            <h2 class="titlebar">{{author}}</h2>
+            {{#if isAuthor}}
+                <p>You cannot follow yourself.</p>
+            {{else}}
+                {{#if notFollowed}}
+                    <a id="btnFollow" class="chirp-author" href="#/user/follow/{{author}}">Follow</a>
+                {{else}}
+                    <a id="btnFollow" class="chirp-author" href="#/user/unfollow/{{author}}">Unfollow</a>
+                {{/if}}
+            {{/if}}
+
+            <div id="userProfileStats" class="user-details">
+                <span>{{chirpsCount}} chirps</span> | <span>{{following}} following</span> | <span>{{followers}} followers</span>
+            </div>
+        </div>
+        <div id="profileChirps" class="chirps"><h2 class="titlebar">Chirps</h2>
+            {{#each chirps}}
+                <article class="chirp">
+                    <div class="titlebar">
+                        <a href="#/user/details/{{author}}" class="chirp-author">{{author}}</a>
+                        <span class="chirp-time">{{date}} day</span>
+                    </div>
+                    <p>{{text}}</p>
+                </article>
+            {{else}}
+                <p>There is no chirps in data.</p>
+            {{/each}}
+
+        </div>
+    </div>
+</section>
+{{>footer}}
