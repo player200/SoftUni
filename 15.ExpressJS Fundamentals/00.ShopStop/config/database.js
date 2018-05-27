@@ -1,25 +1,40 @@
-let products = []
-let count = 1
+const fs = require('fs')
+const path = require('path')
+const dbPath = path.join(__dirname, '/database.json')
+
+function getProducts() {
+    if (fs.existsSync(dbPath) === false) {
+        fs.writeFileSync(dbPath, '[]');
+        return [];
+    }
+
+    let json = fs.readFileSync(dbPath).toString() || '[]';
+    return JSON.parse(json);
+}
+
+function saveProducts(products) {
+    let json = JSON.stringify(products);
+    fs.writeFileSync(dbPath, json);
+}
 
 module.exports.products = {}
 
-module.exports.products.getAll = () => {
-    return products
-}
+module.exports.products.getAll = getProducts
 
 module.exports.products.add = (product) => {
-    product.id = count++
+    let products = getProducts()
+    product.id = products.length + 1
     products.push(product)
+    saveProducts(products)
 }
 
 module.exports.products.findByName = (name) => {
-    let product = null
-
-    for (let p of products) {
-        if (p.name === name) {
-            return p
+    let products = getProducts()
+    for (let product of products) {
+        if (product.name === name) {
+            return product
         }
     }
 
-    return product
+    return null
 }
