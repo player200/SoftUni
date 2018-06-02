@@ -9,12 +9,20 @@
   <link rel="icon" href="/content/images/favicon.ico">
   <link rel="stylesheet" type="text/css" href="/content/styles/site.min.css">
 </head>
+
 <body>
   <header>
     <nav class="nav">
       <ul>
-        <li><a href="/">Home Page</a></li>
-        <li><a href="/product/add">Add Product</a></li>
+        <li>
+          <a href="/">Home Page</a>
+        </li>
+        <li>
+          <a href="/product/add">Add Product</a>
+        </li>
+        <li>
+          <a href="/category/add">Add Category</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -27,19 +35,22 @@
 
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea id="description" name="description" type="text" 
-          class="input-field"></textarea>
+        <textarea id="description" name="description" type="text" class="input-field"></textarea>
       </div>
 
       <div class="form-group">
         <label for="price">Price</label>
-        <input id="price" name="price" type="number" step="0.01" 
-          class="input-field" />
+        <input id="price" name="price" type="number" step="0.01" class="input-field" />
       </div>
 
       <div class="form-group">
         <label for="image">Image</label>
         <input id="image" name="image" type="file" class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="group">Group</label>
+        {categories}
       </div>
 
       <div class="form-group">
@@ -52,4 +63,5 @@
     <p>&copy; ShopStop</p>
   </footer>
 </body>
+
 </html>
