@@ -1,0 +1,16 @@
+{
+  "name": "01.memedb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "^1.2.1",
+    "multiparty": "^4.1.4",
+    "shortid": "^2.2.8"
+  }
+}

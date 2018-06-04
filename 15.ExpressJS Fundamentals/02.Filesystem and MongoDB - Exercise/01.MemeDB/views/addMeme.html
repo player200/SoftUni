@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css" />
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <nav>
+                <a href="/" class="logo">
+                    <img class="logo" src="/public/images/nodeLogo.png" alt="nodeLogo">
+                </a>
+                <input type="checkbox" id="nav" />
+                <label for="nav"></label>
+                <ul>
+                    <li>
+                        <a href="/addMeme">Add Meme</a>
+                    </li>
+                    <li>
+                        <a href="/viewAllMemes">View All Memes</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>Add New Movie</h1>
+    <div class="container">
+        <form method="POST" enctype=multipart/form-data >
+            <label for="title">Title</label>
+            <input  class="input-field" type="text" id="title" name="title" placeholder="The title of the movie">
+
+            <label for="meme">Poster URL</label>
+            <input  class="input-field" type="file" id="meme" name="meme" placeholder="Link to a poster">
+
+            <input type="checkbox" name='privacy' id='status' checked> public
+
+            <label for="description">Movie description</label>
+            <textarea  class="input-field" id="description" name="description" placeholder="Movie description" rows="10" cols="10"></textarea>
+
+            <input class="btn form-btn" type="submit" value="Submit">
+    </div>
+    <div id="replaceMe">{{replaceMe}}</div>
+</body>
+
+</html>
