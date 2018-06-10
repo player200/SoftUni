@@ -1,0 +1,10 @@
+extends ../layout.pug
+
+block content
+    h1 Here are your memes
+    .content
+        img(src=targetedMeme.memeSrc alt="")
+        h3=`Title ${targetedMeme.title}`
+        p=targetedMeme.description
+        button
+            a(href=`${targetedMeme.memeSrc}` download)=`Download Meme`

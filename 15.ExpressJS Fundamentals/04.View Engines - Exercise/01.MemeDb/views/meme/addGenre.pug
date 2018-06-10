@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block content
+    h1='Add New Genre'
+    .container
+        form(action='/memes/addGenre' enctype="multipart/form-data" method="POST")
+            lable(for="movieTitle")="Title"
+            input#movieTitle(type="text" name="memeTitle" placeholder="The title of the movie")
+            input(type="submit" value="Submit")
+
+    if error
+        .errBox
+            h2.errMsg= error
+    else if success
+        .succssesBox
+            h2.succssesMsg= success

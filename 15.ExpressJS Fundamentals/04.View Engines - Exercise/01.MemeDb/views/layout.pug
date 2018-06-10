@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Document
+        link(rel="stylesheet" type="text/css" href="/public/css/main.css" )
+    body
+        header
+            div.inner
+                nav
+                    input#nav(type="checkbox")
+                    lable(for="nav")
+                    ul
+                        li
+                            a(href="/") Home
+                        li
+                            a(href="/memes/addMeme") Add Meme
+                        li
+                            a(href="/memes/viewAllMemes") View All Memes
+                        li
+                            a(href="/memes/addGenre") Add Genre
+    main
+      block content
+
+    if error
+        #errBox
+            h2#errMsg=`Please fill all fields`
+        
+    else if success
+        #succssesBox
+            h2#succssesMsg=`Meme Added`
+        

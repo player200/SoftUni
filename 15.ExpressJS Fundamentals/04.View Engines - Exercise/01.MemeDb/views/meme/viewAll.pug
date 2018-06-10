@@ -1,0 +1,7 @@
+extends ../layout.pug
+
+block content
+    h1 Here are your memes
+    each curMeme in data
+        .meme
+            a(href=`/memes/getDetails?id=${curMeme._id}`): img.memePoster(src=curMeme.memeSrc)

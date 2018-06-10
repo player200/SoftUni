@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block content
+    h1 Add New Movie
+    .container
+        form(action="/memes/addMeme" enctype="multipart/form-data" method="POST")
+            lable(for="movieTitle") Title
+            input#movieTitle(type="text" name="memeTitle" placeholder="The title of the movie")
+            select#genreSelect(name='genreSelect')
+                each genre in genres
+                    option(value=genre._id)=genre.title
+            lable(for="moviePoster")
+            input#moviePoster(type="file" name="meme" placeholder="Link to a poster")
+            input#status(type="checkbox" name='status' checked)
+            label(for="movieDescription") Movie description
+            textarea#movieDescription(name="memeDescription" placeholder="Movie description" rows="10" cols="10")
+            input(type="submit" value="Submit")
+    
+    if error
+        .errBox
+            h2.errMsg= error
+    else if success
+        .succssesBox
+            h2.succssesMsg= success
+            

@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block content
+    h1=`Add New Book`
+    if error
+        #errBox
+            h2#errMsg=`Please fill all fields`
+    else if success
+        #succssesBox
+            h2#succssesMsg=`Book Added`
+    .container
+        form(action="/addBook" method="POST")
+            lable(for="bookTitle")='Title'
+            input#bookTitle(type="text" name="bookTitle" placeholder="The title of the book")
+            lable(for="bookYear")='Year'
+            input#bookYear(type="text" name="bookYear" placeholder="Year of release")
+            lable(for="bookPoster")='Poster URL'
+            input#bookPoster(type="text" name="bookPoster" placeholder="Link to a poster")
+            lable(for="bookAuthor")='Book author'
+            input#bookAuthor(type="text" name="bookAuthor" placeholder="Book author")
+            input(type="submit" value="Submit")

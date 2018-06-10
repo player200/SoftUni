@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Book Library
+    link(rel="stylesheet" type="text/css" href="/static/css/main.css")
+  body
+    header
+        .inner
+            nav
+                ul
+                    li
+                        a(href='/') Home Page
+                    li
+                        a(href='/addBook') Add Book
+                    li
+                        a(href='/viewAllBooks') View All Books
+    main
+      block content
