@@ -1,0 +1,75 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Find a movie</h1>
+    <p>Search for a movie using the form below:</p>
+    <form #form="ngForm" (submit)="search(form.value)">
+      <input type="text" class="form-control" name="search" ngModel>
+      <button type="sumbit" class="btn btn-primary">Search</button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="isSelected" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Matched Movies</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let movie of selected.results;let i=index" class="col-md-2">
+        <app-movie *ngIf="i < 6" [movie]="movie"></app-movie>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Popular Movies</h3>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="popular" class="row">
+      <div *ngFor="let movie of popular.results;let i=index" class="col-md-2">
+        <app-movie *ngIf="i < 6" [movie]="movie"></app-movie>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">In Theaters</h3>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="theaters" class="row">
+      <div *ngFor="let movie of theaters.results;let i=index" class="col-md-2">
+        <app-movie *ngIf="i < 6" [movie]="movie"></app-movie>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Kids</h3>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="kids" class="row">
+      <div *ngFor="let movie of kids.results;let i=index" class="col-md-2">
+        <app-movie *ngIf="i < 6" [movie]="movie"></app-movie>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Drama</h3>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="drama" class="row">
+      <div *ngFor="let movie of drama.results;let i=index" class="col-md-2">
+        <app-movie *ngIf="i < 6" [movie]="movie"></app-movie>
+      </div>
+    </div>
+  </div>
+</div>
