@@ -1,0 +1,26 @@
+<div *ngIf="bindModel | async as f" class="container">
+  <div class="row space-top">
+      <div class="col-md-12">
+          <h1>Furniture Details</h1>
+      </div>
+  </div>
+  <div class="row space-top">
+      <div class="col-md-4">
+          <div class="card text-white bg-primary">
+              <div class="card-body">
+                  <blockquote class="card-blockquote">
+                      <img src="{{f.image}}" />
+                  </blockquote>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <p>Make: {{f.make}}</p>
+          <p>Model: {{f.model}}</p>
+          <p>Year: {{f.year}}</p>
+          <p>Description: {{f.description}}</p>
+          <p>Price: {{f.price}}</p>
+          <p *ngIf="bindModel.material">Material: {{f.material}}</p>
+      </div>
+  </div>
+</div>
